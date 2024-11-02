@@ -26,11 +26,12 @@ questions = client.collections.get("Question")
 
 with questions.batch.dynamic() as batch:
     for d in data:
-        batch.add_object({
+        uuid = batch.add_object({
             "answer": d["Answer"],
             "question": d["Question"],
             "category": d["Category"],
         })
+        print(f"Added new object with UUID: {uuid}")
 # highlight-end
 
 client.close()  # Free up resources
