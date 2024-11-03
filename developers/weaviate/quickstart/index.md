@@ -37,9 +37,9 @@ The Weaviate Sandbox is free, but the OpenAI usage may incur a small cost (e.g. 
 The code examples here are self-contained. You can copy and paste them into your own environment to try them out.  
 This quickstart guide  is also available in other formats:  
 
-[![Jupyter Notebook](https://img.shields.io/static/v1?label=Jupyter&message=Notebook&color=green&style=for-the-badge)](link-to-notebook-on-github)
-[![Google Colab](https://img.shields.io/static/v1?label=Google&message=Colab&color=blue&style=for-the-badge)](link-to-google-colab)
-[![Local Quickstart](https://img.shields.io/static/v1?label=Local%20Docker&message=QUICKSTART&color=white&style=for-the-badge)](./local.md)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20-%20Notebook%20-%20%23F37626?style=for-the-badge&logo=jupyter)](link-to-notebook-on-github)
+[![Google Colab](https://img.shields.io/badge/Google%20-%20Colab%20-%20%23F9AB00?style=for-the-badge&logo=googlecolab)](link-to-google-colab)
+[![Local Quickstart](https://img.shields.io/badge/Local%20Docker%20-%20Quickstart%20-%20%232496ED?style=for-the-badge&logo=docker)](./local.md)
 
 :::
 
@@ -72,8 +72,8 @@ Go to the [WCD homepage](https://console.weaviate.cloud) and create a free Sandb
 </div>
 <br/> -->
 
-import CreateCluster from '/developers/weaviate/quickstart/img/create_cluster.png';
-import CreateSandbox from '/developers/weaviate/quickstart/img/create_sandbox.png';
+import CreateCluster from '/developers/weaviate/quickstart/img/create_cluster_2.png';
+import CreateSandbox from '/developers/weaviate/quickstart/img/create_sandbox_2.png';
 
 <div class="row">
   <div class="col col--6">
@@ -120,7 +120,7 @@ import CreateSandbox from '/developers/weaviate/quickstart/img/create_sandbox.pn
 
 :::note
 - Cluster provisioning typically takes 1-3 minutes.
-- When the cluster is ready, WCD displays a check mark (`✔️`) next to the cluster name.
+- When the cluster is ready, WCD displays a checkmark (`✔️`) next to the cluster name.
 - Note that WCD adds a random suffix to sandbox cluster names to ensure uniqueness.
 :::
 
@@ -139,6 +139,7 @@ import CodeClientInstall from '/_includes/code/quickstart/clients.install.mdx';
 ### 1.3 Connect to Weaviate
 
 Now you can connect to your Weaviate instance. Get the instance **REST Endpoint URL** and the **Administrator API Key** from the WCD console as shown below.
+A good practice is to save the credentials as [environment variables](https://www.twilio.com/en-us/blog/how-to-set-environment-variables-html) locally but you can also add them directly to the code. 
 
 import WCDClusterURL from '/developers/weaviate/quickstart/img/cluster_url.png';
 
@@ -191,7 +192,7 @@ If you did not see any errors, you are ready to proceed. We will replace the sim
 
 ## Step 2: Populate the database
 
-Now, we can populate our database by first defining a collection then adding data.
+Now, we can populate our database by first defining a collection and then adding data.
 
 ### 2.1 Define a collection
 
