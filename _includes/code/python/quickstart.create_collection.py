@@ -13,22 +13,18 @@ client = weaviate.connect_to_weaviate_cloud(
     auth_credentials=Auth.api_key(wcd_api_key),             # Replace with your Weaviate Cloud key
 )
 
-# END CreateCollection
+client.collections.delete_all()  # Clear the database
 
-# NOT SHOWN TO THE USER - DELETE EXISTING COLLECTION
-client.collections.delete("Question")
-
-# CreateCollection
 # highlight-start
 questions = client.collections.create(
     name="Question",
     vectorizer_config=Configure.Vectorizer.text2vec_openai(),   # Configure the OpenAI embedding integration
     generative_config=Configure.Generative.openai()             # Configure the OpenAI generative AI integration
 )
+
+print(f"Collection has been created: {questions.exists()}")
 # highlight-end
 # CreateCollection
 
 client.close()  # Free up resources
 # END CreateCollection
-
-
