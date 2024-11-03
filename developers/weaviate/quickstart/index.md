@@ -11,9 +11,6 @@ hide_table_of_contents: false
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<span class="badge badge--secondary">Expected time: 30 minutes</span> <span class="badge badge--secondary">Prerequisites: None</span>
-<br/><br/>
-
 :::info What you will learn
 
 In this quickstart guide, you will:
@@ -29,7 +26,7 @@ In this quickstart guide, you will:
 ### Prerequisites
 
 You will need accounts with [Weaviate Cloud](https://console.weaviate.cloud) (WCD) and [OpenAI](https://platform.openai.com/). If you prefer to use locally hosted resources, see [QuickStart: locally hosted](./local.md).  
-The Weaviate Sandbox is free, but the OpenAI usage may incur a small cost (e.g. < 10c US). If you have another, preferred [model provider](../model-providers/index.md), you can use that instead.
+The Weaviate Sandbox is free, but the OpenAI usage may incur a small cost (less than $0.10 USD). If you have another, preferred [model provider](../model-providers/index.md), you can use that instead.
 
 
 :::tip Try it yourself
@@ -37,8 +34,8 @@ The Weaviate Sandbox is free, but the OpenAI usage may incur a small cost (e.g. 
 The code examples here are self-contained. You can copy and paste them into your own environment to try them out.  
 This quickstart guide  is also available in other formats:  
 
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20-%20Notebook%20-%20%23F37626?style=for-the-badge&logo=jupyter)](link-to-notebook-on-github)
-[![Google Colab](https://img.shields.io/badge/Google%20-%20Colab%20-%20%23F9AB00?style=for-the-badge&logo=googlecolab)](link-to-google-colab)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20-%20Notebook%20-%20%23F37626?style=for-the-badge&logo=jupyter)](https://github.com/g-despot/weaviate-io/blob/solution/developers/weaviate/quickstart/quickstart_notebook.ipynb)
+[![Google Colab](https://img.shields.io/badge/Google%20-%20Colab%20-%20%23F9AB00?style=for-the-badge&logo=googlecolab)](https://github.com/g-despot/weaviate-io/blob/solution/developers/weaviate/quickstart/quickstart_notebook.ipynb)
 [![Local Quickstart](https://img.shields.io/badge/Local%20Docker%20-%20Quickstart%20-%20%232496ED?style=for-the-badge&logo=docker)](./local.md)
 
 :::
@@ -89,7 +86,7 @@ import CreateSandbox from '/developers/weaviate/quickstart/img/create_sandbox_2.
         <img src={CreateCluster} alt="Create a cluster"/>
       </div>
       <div class="card__body">
-        Click on this button to start cluster creation
+        Click on this button to start cluster creation.
       </div>
     </div>
   </div>
@@ -268,10 +265,7 @@ import QueryNearText from '/_includes/code/quickstart/quickstart.query.neartext.
 
 <QueryNearText />
 
-Run this code to perform the query. Our query found entries for `DNA` and `species`.
-
-<details>
-  <summary>Example full response in JSON format</summary>
+Our query found entries for `DNA` and `species`. Below you can see the results in JSON format:
 
 ```json
 {
@@ -288,17 +282,8 @@ Run this code to perform the query. Our query found entries for `DNA` and `speci
 }
 ```
 
-</details>
-
-If you inspect the full response, you will see that the word `biology` does not appear anywhere.
-
-Even so, Weaviate was able to return biology-related entries. This is made possible by *vector embeddings* that capture meaning. Under the hood, semantic search is powered by vectors, or vector embeddings.
-
-:::info Where did the vectors come from?
-Weaviate used the OpenAI API key to generate a vector embedding for each object during import. During the query, Weaviate similarly converted the query (`biology`) into a vector.
-
-As we mentioned above, this is optional. See [Starter Guide: Bring Your Own Vectors](/developers/weaviate/starter-guides/custom-vectors.mdx) if you would prefer to provide your own vectors.
-:::
+If you inspect the response, you will see that the word `biology` does not appear anywhere.
+Even so, Weaviate was able to return biology-related entries. This is made possible by *vector embeddings* that capture meaning and power the semantic search.
 
 :::tip More search types available
 
@@ -332,23 +317,11 @@ The power of RAG comes from the ability to transform your own data. Weaviate hel
 
 <hr/>
 
-## Recap
-
-In this quickstart guide, you:
-
-- Created a Serverless Weaviate sandbox instance on Weaviate Cloud.
-- Defined a collection and added data.
-- Performed queries, including:
-    - Semantic search, and
-    - Retrieval augmented generation.
-
-Where to go next is up to you. We include some suggested steps and resources below.
-
-<hr/>
-
 ## Next steps
 
-Try these additional resources to learn more about Weaviate:
+
+Through this guide, you learned how to set up a Weaviate Cloud instance, create a collection with data, and explore Weaviate's capabilities through semantic search and retrieval-augmented generation (RAG). 
+Now, you can dive deeper with the additional resources provided below:
 
 <div class="container margin-top--xs padding-top--xs">
   <div class="row">
